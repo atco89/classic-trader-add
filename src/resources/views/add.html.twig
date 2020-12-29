@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="container vh-100">
+        <div class="row w-100">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="text-primary">
+                            {{ car.make ~ " " ~ car.model ~ " " ~ car.specification ~ " (" ~ car.yearOfProduction ~ ")" }}
+                        </h3>
+                    </div>
+                    <div class="col-6 text-right">
+                        <h3>144.800 <small>EUR</small></h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h6>
+                            <i>{{ car.make ~ " " ~ car.model ~ " " ~ car.specification }}</i>
+                        </h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <img src="{{ images.0.url }}" alt="{{ images.0.url }}" class="img-fluid w-100">
+                    </div>
+                    <div class="col-4">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">{{ contact.firstName ~ " " ~ contact.lastName }}</li>
+                            <li class="list-group-item">{{ location.street }}</li>
+                            <li class="list-group-item">{{ location.postalCode ~ " " ~ location.city }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="col-3">
+                                <img src="{{ images.1.url }}" alt="{{ images.1.url }}" class="img-fluid">
+                            </div>
+                            <div class="col-3">
+                                <img src="{{ images.2.url }}" alt="{{ images.2.url }}" class="img-fluid">
+                            </div>
+                            <div class="col-3">
+                                <img src="{{ images.3.url }}" alt="{{ images.3.url }}" class="img-fluid">
+                            </div>
+                            <div class="col-3">
+                                <img src="{{ images.4.url }}" alt="{{ images.4.url }}" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#fahrzeugdaten"
+                                   role="tab" aria-controls="nav-home" aria-selected="true">Fahrzeugdaten</a>
+                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#beschreibung"
+                                   role="tab" aria-controls="nav-profile" aria-selected="false">Beschreibung</a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#zustand"
+                                   role="tab" aria-controls="nav-contact" aria-selected="false">Zustand</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="fahrzeugdaten">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                 aria-labelledby="nav-home-tab">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <td>Marke</td>
+                                        <td>{{ car.marke }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modell</td>
+                                        <td>{{ car.model }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modellbezeichnung</td>
+                                        <td>{{ car.specification }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Baureihe</td>
+                                        <td>{{ car.body }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Baujahr</td>
+                                        <td>{{ car.yearOfProduction }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="tab-pane fade" id="beschreibung" role="tabpanel"
+                                 aria-labelledby="nav-profile-tab">
+
+                            </div>
+                            <div class="tab-pane fade" id="zustand" role="tabpanel"
+                                 aria-labelledby="nav-contact-tab">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
